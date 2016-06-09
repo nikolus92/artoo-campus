@@ -110,6 +110,11 @@ input[type="radio"] + label {
   }
 }
 
+
+input[type="text"].ng-dirty.ng-invalid{ /* se il form non é vergine e invalido il bordo si colora di rosso */
+  border-color: red;
+}
+
 input[type="radio"]:checked + label {
   background: #0288D1;
   &:before {
@@ -184,4 +189,9 @@ button {
 
 button:focus {
   outline: none;
+}
+
+button[disabled]{
+  opacity: .3;
+  pointer-events: none;
 }

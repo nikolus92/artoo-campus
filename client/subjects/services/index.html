@@ -12,7 +12,41 @@
   <body ng-app="artoo">
     <appbar></appbar>
     
+    <div ng-controller="PlayerCtrl">
+      
+      <div> HP: {{PlayerSrv.get().hp}} </div>
+      <button ng-click="PlayerSrv.takeHit(20)"> Danno </button>
+      <div> Level: {{PlayerSrv.get().level}} </div>
+      <button ng-click="PlayerSrv.levelUp()"> Aumenta livello </button>
+      </div>
+      <div> Stato: {{PlayerSrv.isDead()}}</div>
+      <button ng-click="PlayerSrv.die()"> Muori!!! </button>
+     
+    </div>
+    
     <!-- create an items service with the following methods: get, add, remove, etc -->
+    <div ng-controller="ItemsSrv" >
+      <div ng-repeat="item in ItemsSrv.get()">  <!-- crea un altro scope come punto di riferimento -->
+        <div> Name: {{item.name}} </div>
+        <div> Code: {{item.code}} </div>
+        <div> Description: {{item.description}} </div>
+        <div> Image: <img src="{{item.image}}"> </div>
+        <div> Price: {{item.price}} </div>
+        <div> Availability: {{item.availability}} </div>
+        <div> Races: {{item.races}} </div>
+        <button ng-click="ItemsSrv.updateAvailability(item, +1)"> +1 </button>
+        <button ng-click="ItemsSrv.updateAvailability(item, -1)"> -1 </button>
+        <button ng-click="ItemsSrv.remove(item)"> Elimina </button>
+        <hr>
+      </div>
+      
+   <!--   Items : {{Items}} 
+     
+      Items : {{getItems()}} -->
+      
+      Items : {{ItemsSrv.get()}}
+      
+    </div>
     
     <!-- create a controller to expose the service to the view -->
     
@@ -23,6 +57,10 @@
     <script src="node_modules/angular/angular.min.js"></script>
     <script src="ui/appbar/appbar.js"></script>
     <script src="subjects/services/app.js"></script>
+    <script type="text/javascript" src="subjects/services/items.service.js"></script>
+    <script type="text/javascript" src="subjects/services/items.controller.js"></script>
+    <script type="text/javascript" src="subjects/services/player.service.js"></script>
+    <script type="text/javascript" src="subjects/services/player.controller.js"></script>
     
     <!-- include items service -->
     
