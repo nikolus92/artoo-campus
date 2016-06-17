@@ -12,8 +12,14 @@
   <body ng-app="artoo">
     <appbar></appbar>
     
+    <div ng-controller="UsersCtrl"> </div>
+    
     <script src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="node_modules/angular-resource/angular-resource.min.js"></script>
     <script src="ui/appbar/appbar.js"></script>
     <script src="subjects/node-express/app.js"></script>
+    
+    <script src="subjects/node-express/users/users.controller.js"></script>
+    <script src="subjects/node-express/users/users.service.js"></script>
   </body>
 </html>

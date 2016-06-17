@@ -1,16 +1,18 @@
-module.exports = () => {
-  // business logics
-  const name = 'MyModule';
-  const version = '1.0.0';
+module.exports = function () {
+  /*options = options || {};
+  var robotName = options.robot || 'Napoli';
   
   function sayHello(name) {
-    return 'Hello ' + name;
-  };
+    console.log('Hello' + name + '' + robotName);
+  }*/
   
-  // public API
+  
+  
   return {
-    name: name,
-    sayHello: sayHello,
-    version: version,
+    name: 'My module',    // nome modulo
+    version: '0.1.0',     // versione modulo
+    
+    // public API
+    //    sayHello: sayHello,
   };
 };
