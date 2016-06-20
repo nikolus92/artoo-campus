@@ -14,7 +14,7 @@ var server = http.createServer(function (req, res){
    server.listen(8080, '0.0.0.0', function(){
       console.log('ok nel server'); 
    });
-}); */
+}); 
 
 var express = require('express');
 var app = express();
@@ -38,4 +38,5 @@ app.get('/reverse/:string', function (req, res){
 
 app.listen(8080, function (){
    console.log('server express attivo'); 
-});
+}); */
+
